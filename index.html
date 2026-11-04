@@ -1230,21 +1230,28 @@
     <script src="assets/js/mars.js"></script>
 
 	<!-- Team Selection -->
-    <script>
+<script>
     function toggleTeamYear() {
         var year = document.getElementById("yearSelect").value;
+        var team2026 = document.getElementById("team-2026");
         var team2025 = document.getElementById("team-2025");
         var team2024 = document.getElementById("team-2024");
 
-        if (year === "2025") {
-            team2025.classList.remove("d-none"); // 2025'i göster
-            team2024.classList.add("d-none");    // 2024'ü gizle
-        } else {
-            team2025.classList.add("d-none");    // 2025'i gizle
-            team2024.classList.remove("d-none"); // 2024'ü göster
+        // Hepsini gizle
+        if (team2026) team2026.classList.add("d-none");
+        if (team2025) team2025.classList.add("d-none");
+        if (team2024) team2024.classList.add("d-none");
+
+        // Seçilen yıla göre ilgili olanı aç
+        if (year === "2026" && team2026) {
+            team2026.classList.remove("d-none");
+        } else if (year === "2025" && team2025) {
+            team2025.classList.remove("d-none");
+        } else if (year === "2024" && team2024) {
+            team2024.classList.remove("d-none");
         }
     }
-   </script>
+    </script>
 
     <!-- Popup içeriği 
     <div id="application-popup" class="popup-container">
