@@ -1052,59 +1052,167 @@
 	<!-- End of Blog Section -->
 
 <!-- Calendar Section -->
-<section id="calendar" class="calendar-container">
-    <div class="container">
-        <h6 class="section-subtitle text-center">MARS Projesi</h6>
-        <h5 class="section-title text-center mb-4">Proje Takvimi (2026-2027)</h5>
+    <section id="calendar" class="calendar-container">
+        <div class="container">
+            <h6 class="section-subtitle text-center">MARS Projesi</h6>
+            <h5 class="section-title text-center mb-5">Proje Takvimi (2026-2027)</h5>
+            
+            <!-- Ay Seçim Sekmeleri -->
+            <ul class="nav nav-pills justify-content-center mb-5" id="calendar-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#ekim26" role="tab">Ekim 2026</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#kasim26" role="tab">Kasım 2026</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#aralik26" role="tab">Aralık 2026</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#ocak27" role="tab">Ocak 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#subat27" role="tab">Şubat 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#mart27" role="tab">Mart 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#nisan27" role="tab">Nisan 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#mayis27" role="tab">Mayıs 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#haziran27" role="tab">Haziran 2027</a></li>
+            </ul>
 
-        <!-- Ay sekmeleri -->
-        <div id="month-tabs" class="text-center mb-4"></div>
-
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="card shadow-sm p-4">
-                    <h4 id="month-title" class="text-center mb-4 font-weight-bold"></h4>
-                    <div class="table-responsive">
-                        <table class="table table-bordered text-center mb-0" style="table-layout: fixed; min-width: 800px;">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th style="width: 14.28%;">Pzt</th>
-                                    <th style="width: 14.28%;">Sal</th>
-                                    <th style="width: 14.28%;">Çarş</th>
-                                    <th style="width: 14.28%;">Perş</th>
-                                    <th style="width: 14.28%;">Cum</th>
-                                    <th style="width: 14.28%;">Cts</th>
-                                    <th style="width: 14.28%;">Pzr</th>
-                                </tr>
-                            </thead>
-                            <tbody id="calendar-body"></tbody>
-                        </table>
+            <div class="tab-content" id="calendar-tabContent">
+                
+                <!-- EKİM 2026 -->
+                <div class="tab-pane fade" id="ekim26" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Ekim 2026</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="not-current-month"><span class="date-number">28</span></td>
+                                        <td class="not-current-month"><span class="date-number">29</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span></td>
+                                        <td><span class="date-number">1</span></td>
+                                        <td><span class="date-number">2</span></td>
+                                        <td><span class="date-number">3</span></td>
+                                        <td><span class="date-number">4</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">5</span></td>
+                                        <td><span class="date-number">6</span></td>
+                                        <td><span class="date-number">7</span></td>
+                                        <td><span class="date-number">8</span></td>
+                                        <td><span class="date-number">9</span></td>
+                                        <td><span class="date-number">10</span></td>
+                                        <td><span class="date-number">11</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">12</span></td>
+                                        <td><span class="date-number">13</span></td>
+                                        <td><span class="date-number">14</span></td>
+                                        <td><span class="date-number">15</span></td>
+                                        <td><span class="date-number">16</span><span class="event-desc event-ozel">Açılış<br>(Antalya)</span>[cite: 12]</td>
+                                        <td><span class="date-number">17</span><span class="event-desc event-ozel">Açılış<br>(Antalya)</span>[cite: 12]</td>
+                                        <td><span class="date-number">18</span><span class="event-desc event-ozel">Açılış<br>(Antalya)</span>[cite: 12]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">19</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Tarih - Karadelik</span>[cite: 12]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">26</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                        <td><span class="date-number">31</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<script>
-(function () {
-    var COLORS = {
-        karadelik: '#2f8fff',
-        kulucka:   '#52b96b',
-        supernova: '#8a75f5',
-        yildiz:    '#f39c12',
-        istanbul:  '#17a2b8',
-        egitim:    '#34495e',
-        acilis:    '#e84393'
-    };
+                <!-- KASIM 2026 (Varsayılan Açık) -->
+                <div class="tab-pane fade show active" id="kasim26" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Kasım 2026</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="not-current-month"><span class="date-number">26</span></td>
+                                        <td class="not-current-month"><span class="date-number">27</span></td>
+                                        <td class="not-current-month"><span class="date-number">28</span></td>
+                                        <td class="not-current-month"><span class="date-number">29</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span></td>
+                                        <td class="not-current-month"><span class="date-number">31</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-kulucka">Tarih - Kuluçka</span>[cite: 12]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">2</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                        <td><span class="date-number">3</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                        <td><span class="date-number">4</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                        <td><span class="date-number">5</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                        <td><span class="date-number">6</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                        <td><span class="date-number">7</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                        <td><span class="date-number">8</span><span class="event-desc event-supernova">Tarih - Süpernova</span>[cite: 12]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">9</span></td>
+                                        <td><span class="date-number">10</span></td>
+                                        <td><span class="date-number">11</span></td>
+                                        <td><span class="date-number">12</span></td>
+                                        <td><span class="date-number">13</span></td>
+                                        <td><span class="date-number">14</span></td>
+                                        <td><span class="date-number">15</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">16</span></td>
+                                        <td><span class="date-number">17</span></td>
+                                        <td><span class="date-number">18</span></td>
+                                        <td><span class="date-number">19</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-bulusma">Yıldızlararası<br>Buluşması</span>[cite: 12]</td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-bulusma">Yıldızlararası<br>Buluşması</span>[cite: 12]</td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-bulusma">Yıldızlararası<br>Buluşması</span>[cite: 12]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-karadelik">Uls. Hukuk - Karadelik</span>[cite: 12]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">2</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">3</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">4</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">5</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                        <td class="not-current-month"><span class="date-number">6</span><span class="event-desc event-kulucka">Uls. Hukuk - Kuluçka</span>[cite: 12]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-    // [başlangıç (yıl, ay, gün), bitiş (yıl, ay, gün), etiket, renk]  -- ay: 1-12
-    var EVENTS = [
-        [[2026,10,16],[2026,10,18], 'Açılış (Antalya)', COLORS.acilis],
-
-        [[2026,10,19],[2026,10,25], 'Karadelik Hf. (Tarih)', COLORS.karadelik],
-        [[2026,10,26],[2026,11,1],  'Kuluçka Hf. (Tarih)',   COLORS.kulucka],
-        [[2026,11,2], [2026,11,8],  'Süpernova Hf.
+                <!-- ARALIK 2026 -->
+                <div class="tab-pane fade" id="aralik26" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Aralık 2026</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
     <section class="has-bg-img py-0">
         <div class="container">
             <div class="footer">
