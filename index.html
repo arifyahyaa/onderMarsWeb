@@ -1055,15 +1055,17 @@
 <section id="calendar" class="calendar-container">
     <div class="container">
         <h6 class="section-subtitle text-center">MARS Projesi</h6>
-        <h5 class="section-title text-center mb-5">Kasım 2026</h5>
+        <h5 class="section-title text-center mb-4">Proje Takvimi (2026-2027)</h5>
+
+        <!-- Ay sekmeleri -->
+        <div id="month-tabs" class="text-center mb-4"></div>
 
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="card shadow-sm p-4">
+                    <h4 id="month-title" class="text-center mb-4 font-weight-bold"></h4>
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center mb-0"
-                               style="table-layout: fixed; min-width: 800px;">
-
+                        <table class="table table-bordered text-center mb-0" style="table-layout: fixed; min-width: 800px;">
                             <thead class="thead-light">
                                 <tr>
                                     <th style="width: 14.28%;">Pzt</th>
@@ -1075,311 +1077,7 @@
                                     <th style="width: 14.28%;">Pzr</th>
                                 </tr>
                             </thead>
-
-                            <tbody>
-
-                                <!-- 1. Hafta: 26 Ekim - 1 Kasım -->
-                                <tr>
-                                    <td class="align-top p-2" style="height: 90px;">
-                                        <span class="text-muted small float-right">26</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">27</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">28</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">29</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">30</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">31</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">1</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Tarih)
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- 2. Hafta: 2 - 8 Kasım -->
-                                <tr>
-                                    <td class="align-top p-2" style="height: 90px;">
-                                        <span class="text-dark small float-right font-weight-bold">2</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">3</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">4</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">5</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">6</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">7</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">8</span>
-                                        <div class="badge text-white p-1 mt-3 w-100 text-center small"
-                                             style="background-color: #8a75f5; font-size: 10px;">
-                                            Süpernova Hf. (Tarih)
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- 3. Hafta: 9 - 15 Kasım -->
-                                <tr>
-                                    <td class="align-top p-2" style="height: 90px;">
-                                        <span class="text-dark small float-right font-weight-bold">9</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">10</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">11</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">12</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">13</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">14</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">15</span>
-                                    </td>
-                                </tr>
-
-                                <!-- 4. Hafta: 16 - 22 Kasım -->
-                                <tr>
-                                    <td class="align-top p-2" style="height: 90px;">
-                                        <span class="text-dark small float-right font-weight-bold">16</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">17</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">18</span>
-                                    </td>
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">19</span>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">20</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #e67e22; font-size: 10px;">
-                                            Yıldızlararası Buluşma
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">21</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #e67e22; font-size: 10px;">
-                                            Yıldızlararası Buluşma
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">22</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #e67e22; font-size: 10px;">
-                                            Yıldızlararası Buluşma
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- 5. Hafta: 23 - 29 Kasım -->
-                                <tr>
-                                    <td class="align-top p-2" style="height: 90px;">
-                                        <span class="text-dark small float-right font-weight-bold">23</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">24</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">25</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">26</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">27</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">28</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-dark small float-right font-weight-bold">29</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #3498db; font-size: 10px;">
-                                            Karadelik Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- 6. Hafta: 30 Kasım - 6 Aralık -->
-                                <tr>
-                                    <td class="align-top p-2" style="height: 90px;">
-                                        <span class="text-dark small float-right font-weight-bold">30</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">1</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">2</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">3</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">4</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">5</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-
-                                    <td class="align-top p-2">
-                                        <span class="text-muted small float-right">6</span>
-                                        <div class="badge text-white p-1 mt-2 w-100 text-center small"
-                                             style="background-color: #4caf65; font-size: 10px;">
-                                            Kuluçka Hf. (Uluslararası Hukuk)
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
+                            <tbody id="calendar-body"></tbody>
                         </table>
                     </div>
                 </div>
@@ -1387,7 +1085,26 @@
         </div>
     </div>
 </section>
-<!-- End of Calendar Section -->
+
+<script>
+(function () {
+    var COLORS = {
+        karadelik: '#2f8fff',
+        kulucka:   '#52b96b',
+        supernova: '#8a75f5',
+        yildiz:    '#f39c12',
+        istanbul:  '#17a2b8',
+        egitim:    '#34495e',
+        acilis:    '#e84393'
+    };
+
+    // [başlangıç (yıl, ay, gün), bitiş (yıl, ay, gün), etiket, renk]  -- ay: 1-12
+    var EVENTS = [
+        [[2026,10,16],[2026,10,18], 'Açılış (Antalya)', COLORS.acilis],
+
+        [[2026,10,19],[2026,10,25], 'Karadelik Hf. (Tarih)', COLORS.karadelik],
+        [[2026,10,26],[2026,11,1],  'Kuluçka Hf. (Tarih)',   COLORS.kulucka],
+        [[2026,11,2], [2026,11,8],  'Süpernova Hf.
     <section class="has-bg-img py-0">
         <div class="container">
             <div class="footer">
