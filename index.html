@@ -20,39 +20,16 @@
     <!-- Bootstrap + Creative Studio main styles -->
 	<link rel="stylesheet" href="assets/css/mars.css">
 
-	/* Özel Takvim Etiket Stilleri */
-        .calendar-grid td {
-            padding: 0 !important; /* Hücrenin iç boşluğunu sıfırla */
-            position: relative;
-            vertical-align: top;
-            height: 100px; /* Sabit bir yükseklik ver */
-        }
-        .date-number {
-            display: block;
-            text-align: right;
-            padding: 5px 8px; /* Sayı için biraz boşluk bırak */
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-        }
-        .event-label {
-            position: absolute;
-            bottom: 5px; /* Alt kısımdan biraz boşluk */
-            left: 5px; /* Sol kısımdan boşluk */
-            right: 5px; /* Sağ kısımdan boşluk */
-            padding: 8px;
-            color: white;
-            font-size: 11px;
-            text-align: left;
-            border-radius: 4px;
-            line-height: 1.2;
-            word-wrap: break-word;
-        }
-        .bg-purple { background-color: #8a75f5 !important; }
-        .bg-orange { background-color: #e67e22 !important; }
-        .bg-blue { background-color: #3498db !important; }
-
-    <!-- Favicon ayarı -->
+/* Event Color Codes - Her Etkinlik İçin Özel Renk */
+        .event-karadelik { background-color: #2d8cf0; }    /* Mavi - Karadelik */
+        .event-kulucka { background-color: #4db66b; }      /* Yeşil - Kuluçka */
+        .event-supernova { background-color: #7c6cf6; }    /* Mor - Süpernova */
+        .event-bulusma { background-color: #f39c12; }      /* Turuncu - Yıldızlararası Buluşma */
+        .event-calistay { background-color: #17a2b8; }     /* Turkuaz - İstanbul Çalıştayı */
+        .event-ozel { background-color: #e84393; }         /* Mercan/Pembe - Açılış & Kapanış */
+        .event-egitim { background-color: #34495e; }       /* Koyu Lacivert - Eğitim İçeriği */
+  
+	<!-- Favicon ayarı -->
     <link rel="icon" href="assets/imgs/favicon.png" type="image/png">
 
     <!-- Popup başvuru ekranı-->
@@ -1086,37 +1063,44 @@
     <section id="calendar" class="calendar-container">
         <div class="container">
             <h6 class="section-subtitle text-center">MARS Projesi</h6>
-            <h5 class="section-title text-center mb-5">Proje Takvimi (2026-2027)</h5>
+            <h5 class="section-title text-center mb-4">Proje Takvimi (2026-2027)</h5>
             
-            <!-- Ay Seçim Butonları (Nav Pills) -->
+            <!-- Renk Anahtarı (Legend) -->
+            <div class="d-flex flex-wrap justify-content-center mb-4" style="gap: 10px;">
+                <span class="badge text-white p-2" style="background-color: #2d8cf0;">Karadelik</span>
+                <span class="badge text-white p-2" style="background-color: #4db66b;">Kuluçka</span>
+                <span class="badge text-white p-2" style="background-color: #7c6cf6;">Süpernova</span>
+                <span class="badge text-white p-2" style="background-color: #f39c12;">Yıldızlararası Buluşma</span>
+                <span class="badge text-white p-2" style="background-color: #17a2b8;">İstanbul Çalıştayı</span>
+                <span class="badge text-white p-2" style="background-color: #34495e;">Eğitim İçeriği</span>
+                <span class="badge text-white p-2" style="background-color: #e84393;">Açılış / Kapanış</span>
+            </div>
+
+            <!-- Ay Seçim Sekmeleri -->
             <ul class="nav nav-pills justify-content-center mb-5" id="calendar-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="oct-tab" data-toggle="pill" href="#oct26" role="tab" aria-controls="oct26" aria-selected="true">Ekim 2026</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="nov-tab" data-toggle="pill" href="#nov26" role="tab" aria-controls="nov26" aria-selected="false">Kasım 2026</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="dec-tab" data-toggle="pill" href="#dec26" role="tab" aria-controls="dec26" aria-selected="false">Aralık 2026</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#ekim26" role="tab">Ekim 2026</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#kasim26" role="tab">Kasım 2026</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#aralik26" role="tab">Aralık 2026</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#ocak27" role="tab">Ocak 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#subat27" role="tab">Şubat 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#mart27" role="tab">Mart 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#nisan27" role="tab">Nisan 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#mayis27" role="tab">Mayıs 2027</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#haziran27" role="tab">Haziran 2027</a></li>
             </ul>
 
-            <!-- Takvim İçerikleri -->
             <div class="tab-content" id="calendar-tabContent">
                 
                 <!-- EKİM 2026 -->
-                <div class="tab-pane fade show active" id="oct26" role="tabpanel" aria-labelledby="oct-tab">
+                <div class="tab-pane fade" id="ekim26" role="tabpanel">
                     <div class="month-card">
                         <h3 class="month-header">Ekim 2026</h3>
                         <div class="calendar-table-wrapper">
                             <table class="calendar-grid">
                                 <thead>
-                                    <tr>
-                                        <th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th>
-                                    </tr>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Ekim 1-4 -->
                                     <tr>
                                         <td class="not-current-month"><span class="date-number">28</span></td>
                                         <td class="not-current-month"><span class="date-number">29</span></td>
@@ -1126,7 +1110,6 @@
                                         <td><span class="date-number">3</span></td>
                                         <td><span class="date-number">4</span></td>
                                     </tr>
-                                    <!-- Ekim 5-11 -->
                                     <tr>
                                         <td><span class="date-number">5</span></td>
                                         <td><span class="date-number">6</span></td>
@@ -1136,44 +1119,32 @@
                                         <td><span class="date-number">10</span></td>
                                         <td><span class="date-number">11</span></td>
                                     </tr>
-                                    <!-- Ekim 12-18 (Açılış Antalya) -->
                                     <tr>
                                         <td><span class="date-number">12</span></td>
                                         <td><span class="date-number">13</span></td>
                                         <td><span class="date-number">14</span></td>
                                         <td><span class="date-number">15</span></td>
-                                        <td>
-                                            <span class="date-number">16</span>
-                                            <span class="event-desc event-tatil">Açılış (Antalya)</span>
-                                        </td>
-                                        <td>
-                                            <span class="date-number">17</span>
-                                            <span class="event-desc event-tatil">Açılış (Antalya)</span>
-                                        </td>
-                                        <td>
-                                            <span class="date-number">18</span>
-                                            <span class="event-desc event-tatil">Açılış (Antalya)</span>
-                                        </td>
+                                        <td><span class="date-number">16</span><span class="event-desc event-ozel">Açılış<br>(Antalya)</span></td>
+                                        <td><span class="date-number">17</span><span class="event-desc event-ozel">Açılış<br>(Antalya)</span></td>
+                                        <td><span class="date-number">18</span><span class="event-desc event-ozel">Açılış<br>(Antalya)</span></td>
                                     </tr>
-                                    <!-- Ekim 19-25 (Tarih - Karadelik) -->
                                     <tr>
-                                        <td><span class="date-number">19</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
-                                        <td><span class="date-number">20</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
-                                        <td><span class="date-number">21</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
-                                        <td><span class="date-number">22</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
-                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
-                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
-                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Tarih (Karadelik)</span></td>
+                                        <td><span class="date-number">19</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Tarih)</span></td>
                                     </tr>
-                                    <!-- Ekim 26-1 (Tarih - Kuluçka) -->
                                     <tr>
-                                        <td><span class="date-number">26</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
-                                        <td><span class="date-number">27</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
-                                        <td><span class="date-number">28</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
-                                        <td><span class="date-number">29</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
-                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
-                                        <td><span class="date-number">31</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
-                                        <td class="not-current-month"><span class="date-number">1</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">31</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1181,39 +1152,34 @@
                     </div>
                 </div>
 
-                <!-- KASIM 2026 -->
-                <div class="tab-pane fade" id="nov26" role="tabpanel" aria-labelledby="nov-tab">
+                <!-- KASIM 2026 (Varsayılan Açık) -->
+                <div class="tab-pane fade show active" id="kasim26" role="tabpanel">
                     <div class="month-card">
                         <h3 class="month-header">Kasım 2026</h3>
                         <div class="calendar-table-wrapper">
                             <table class="calendar-grid">
                                 <thead>
-                                    <tr>
-                                        <th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th>
-                                    </tr>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Kasım 1 (Tarih - Kuluçka Sonu) -->
                                     <tr>
-                                        <td class="not-current-month"><span class="date-number">26</span></td>
-                                        <td class="not-current-month"><span class="date-number">27</span></td>
-                                        <td class="not-current-month"><span class="date-number">28</span></td>
-                                        <td class="not-current-month"><span class="date-number">29</span></td>
-                                        <td class="not-current-month"><span class="date-number">30</span></td>
-                                        <td class="not-current-month"><span class="date-number">31</span></td>
-                                        <td><span class="date-number">1</span><span class="event-desc event-kulucka">Tarih (Kuluçka)</span></td>
+                                        <td class="not-current-month"><span class="date-number">26</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td class="not-current-month"><span class="date-number">27</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td class="not-current-month"><span class="date-number">28</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td class="not-current-month"><span class="date-number">29</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td class="not-current-month"><span class="date-number">31</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Tarih)</span></td>
                                     </tr>
-                                    <!-- Kasım 2-8 (Tarih - Süpernova) -->
                                     <tr>
-                                        <td><span class="date-number">2</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
-                                        <td><span class="date-number">3</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
-                                        <td><span class="date-number">4</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
-                                        <td><span class="date-number">5</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
-                                        <td><span class="date-number">6</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
-                                        <td><span class="date-number">7</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
-                                        <td><span class="date-number">8</span><span class="event-desc event-supernova">Tarih (Süpernova)</span></td>
+                                        <td><span class="date-number">2</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">3</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">4</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">5</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">6</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">7</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
+                                        <td><span class="date-number">8</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Tarih)</span></td>
                                     </tr>
-                                    <!-- Kasım 9-15 -->
                                     <tr>
                                         <td><span class="date-number">9</span></td>
                                         <td><span class="date-number">10</span></td>
@@ -1223,35 +1189,32 @@
                                         <td><span class="date-number">14</span></td>
                                         <td><span class="date-number">15</span></td>
                                     </tr>
-                                    <!-- Kasım 16-22 (Yıldızlararası Konya) -->
                                     <tr>
                                         <td><span class="date-number">16</span></td>
                                         <td><span class="date-number">17</span></td>
                                         <td><span class="date-number">18</span></td>
                                         <td><span class="date-number">19</span></td>
-                                        <td><span class="date-number">20</span><span class="event-desc event-karma">Yıldızlararası (Konya)</span></td>
-                                        <td><span class="date-number">21</span><span class="event-desc event-karma">Yıldızlararası (Konya)</span></td>
-                                        <td><span class="date-number">22</span><span class="event-desc event-karma">Yıldızlararası (Konya)</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-bulusma">Yıldızlararası<br>(Konya)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-bulusma">Yıldızlararası<br>(Konya)</span></td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-bulusma">Yıldızlararası<br>(Konya)</span></td>
                                     </tr>
-                                    <!-- Kasım 23-29 (Uluslararası Hukuk - Karadelik) -->
                                     <tr>
-                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
-                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
-                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
-                                        <td><span class="date-number">26</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
-                                        <td><span class="date-number">27</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
-                                        <td><span class="date-number">28</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
-                                        <td><span class="date-number">29</span><span class="event-desc event-karadelik">Uls. Hukuk (Karadelik)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Uls. Hukuk)</span></td>
                                     </tr>
-                                    <!-- Kasım 30 -->
                                     <tr>
-                                        <td><span class="date-number">30</span></td>
-                                        <td class="not-current-month"><span class="date-number">1</span></td>
-                                        <td class="not-current-month"><span class="date-number">2</span></td>
-                                        <td class="not-current-month"><span class="date-number">3</span></td>
-                                        <td class="not-current-month"><span class="date-number">4</span></td>
-                                        <td class="not-current-month"><span class="date-number">5</span></td>
-                                        <td class="not-current-month"><span class="date-number">6</span></td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td class="not-current-month"><span class="date-number">2</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td class="not-current-month"><span class="date-number">3</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td class="not-current-month"><span class="date-number">4</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td class="not-current-month"><span class="date-number">5</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td class="not-current-month"><span class="date-number">6</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1260,38 +1223,33 @@
                 </div>
 
                 <!-- ARALIK 2026 -->
-                <div class="tab-pane fade" id="dec26" role="tabpanel" aria-labelledby="dec-tab">
+                <div class="tab-pane fade" id="aralik26" role="tabpanel">
                     <div class="month-card">
                         <h3 class="month-header">Aralık 2026</h3>
                         <div class="calendar-table-wrapper">
                             <table class="calendar-grid">
                                 <thead>
-                                    <tr>
-                                        <th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th>
-                                    </tr>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Aralık 1-6 (Uluslararası Hukuk - Kuluçka) -->
                                     <tr>
-                                        <td class="not-current-month"><span class="date-number">30</span></td>
-                                        <td><span class="date-number">1</span><span class="event-desc event-kulucka">Uls. Hukuk (Kuluçka)</span></td>
-                                        <td><span class="date-number">2</span><span class="event-desc event-kulucka">Uls. Hukuk (Kuluçka)</span></td>
-                                        <td><span class="date-number">3</span><span class="event-desc event-kulucka">Uls. Hukuk (Kuluçka)</span></td>
-                                        <td><span class="date-number">4</span><span class="event-desc event-kulucka">Uls. Hukuk (Kuluçka)</span></td>
-                                        <td><span class="date-number">5</span><span class="event-desc event-kulucka">Uls. Hukuk (Kuluçka)</span></td>
-                                        <td><span class="date-number">6</span><span class="event-desc event-kulucka">Uls. Hukuk (Kuluçka)</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">2</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">3</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">4</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">5</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">6</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Uls. Hukuk)</span></td>
                                     </tr>
-                                    <!-- Aralık 7-13 (Uluslararası Hukuk - Süpernova) -->
                                     <tr>
-                                        <td><span class="date-number">7</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
-                                        <td><span class="date-number">8</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
-                                        <td><span class="date-number">9</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
-                                        <td><span class="date-number">10</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
-                                        <td><span class="date-number">11</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
-                                        <td><span class="date-number">12</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
-                                        <td><span class="date-number">13</span><span class="event-desc event-supernova">Uls. Hukuk (Süpernova)</span></td>
+                                        <td><span class="date-number">7</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">8</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">9</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">10</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">11</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">12</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
+                                        <td><span class="date-number">13</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Uls. Hukuk)</span></td>
                                     </tr>
-                                    <!-- Aralık 14-20 -->
                                     <tr>
                                         <td><span class="date-number">14</span></td>
                                         <td><span class="date-number">15</span></td>
@@ -1301,25 +1259,389 @@
                                         <td><span class="date-number">19</span></td>
                                         <td><span class="date-number">20</span></td>
                                     </tr>
-                                    <!-- Aralık 21-27 (Ekonomi - Karadelik) -->
                                     <tr>
-                                        <td><span class="date-number">21</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
-                                        <td><span class="date-number">22</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
-                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
-                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
-                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
-                                        <td><span class="date-number">26</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
-                                        <td><span class="date-number">27</span><span class="event-desc event-karadelik">Ekonomi (Karadelik)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Ekonomi)</span></td>
                                     </tr>
-                                    <!-- Aralık 28-3 (Ekonomi - Kuluçka) -->
                                     <tr>
-                                        <td><span class="date-number">28</span><span class="event-desc event-kulucka">Ekonomi (Kuluçka)</span></td>
-                                        <td><span class="date-number">29</span><span class="event-desc event-kulucka">Ekonomi (Kuluçka)</span></td>
-                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Ekonomi (Kuluçka)</span></td>
-                                        <td><span class="date-number">31</span><span class="event-desc event-kulucka">Ekonomi (Kuluçka)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">31</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td class="not-current-month"><span class="date-number">2</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td class="not-current-month"><span class="date-number">3</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OCAK 2027 -->
+                <div class="tab-pane fade" id="ocak27" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Ocak 2027</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="not-current-month"><span class="date-number">28</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td class="not-current-month"><span class="date-number">29</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td class="not-current-month"><span class="date-number">31</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">2</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">3</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Ekonomi)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">4</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">5</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">6</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">7</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">8</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">9</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                        <td><span class="date-number">10</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Ekonomi)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">11</span></td>
+                                        <td><span class="date-number">12</span></td>
+                                        <td><span class="date-number">13</span></td>
+                                        <td><span class="date-number">14</span></td>
+                                        <td><span class="date-number">15</span></td>
+                                        <td><span class="date-number">16</span></td>
+                                        <td><span class="date-number">17</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">18</span></td>
+                                        <td><span class="date-number">19</span></td>
+                                        <td><span class="date-number">20</span></td>
+                                        <td><span class="date-number">21</span></td>
+                                        <td><span class="date-number">22</span></td>
+                                        <td><span class="date-number">23</span></td>
+                                        <td><span class="date-number">24</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">25</span><span class="event-desc event-calistay">İstanbul<br>Çalıştayı</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-calistay">İstanbul<br>Çalıştayı</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-calistay">İstanbul<br>Çalıştayı</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-calistay">İstanbul<br>Çalıştayı</span></td>
+                                        <td><span class="date-number">29</span></td>
+                                        <td><span class="date-number">30</span></td>
+                                        <td><span class="date-number">31</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ŞUBAT 2027 -->
+                <div class="tab-pane fade" id="subat27" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Şubat 2027</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="date-number">1</span></td>
+                                        <td><span class="date-number">2</span></td>
+                                        <td><span class="date-number">3</span></td>
+                                        <td><span class="date-number">4</span></td>
+                                        <td><span class="date-number">5</span></td>
+                                        <td><span class="date-number">6</span></td>
+                                        <td><span class="date-number">7</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">8</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">9</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">10</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">11</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">12</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">13</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">14</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanat & Zanaat)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">15</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">16</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">17</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">18</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">19</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanat & Zanaat)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">22</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanat & Zanaat)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MART 2027 -->
+                <div class="tab-pane fade" id="mart27" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Mart 2027</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="date-number">1</span></td>
+                                        <td><span class="date-number">2</span></td>
+                                        <td><span class="date-number">3</span></td>
+                                        <td><span class="date-number">4</span></td>
+                                        <td><span class="date-number">5</span></td>
+                                        <td><span class="date-number">6</span></td>
+                                        <td><span class="date-number">7</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">8</span></td>
+                                        <td><span class="date-number">9</span></td>
+                                        <td><span class="date-number">10</span></td>
+                                        <td><span class="date-number">11</span></td>
+                                        <td><span class="date-number">12</span></td>
+                                        <td><span class="date-number">13</span><span class="event-desc event-bulusma">Yıldızlararası<br>Buluşma</span></td>
+                                        <td><span class="date-number">14</span><span class="event-desc event-bulusma">Yıldızlararası<br>Buluşma</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">15</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">16</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">17</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">18</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">19</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sürdürülebilirlik)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">22</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sürdürülebilirlik)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">29</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">31</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td class="not-current-month"><span class="date-number">2</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td class="not-current-month"><span class="date-number">3</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td class="not-current-month"><span class="date-number">4</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NİSAN 2027 -->
+                <div class="tab-pane fade" id="nisan27" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Nisan 2027</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="not-current-month"><span class="date-number">29</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td class="not-current-month"><span class="date-number">31</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">2</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">3</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                        <td><span class="date-number">4</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sürdürülebilirlik)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">5</span></td>
+                                        <td><span class="date-number">6</span></td>
+                                        <td><span class="date-number">7</span></td>
+                                        <td><span class="date-number">8</span></td>
+                                        <td><span class="date-number">9</span></td>
+                                        <td><span class="date-number">10</span></td>
+                                        <td><span class="date-number">11</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">12</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">13</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">14</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">15</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">16</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">17</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">18</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Sanayi & Tekn.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">19</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">24</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Sanayi & Tekn.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">26</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">2</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAYIS 2027 -->
+                <div class="tab-pane fade" id="mayis27" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Mayıs 2027</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="not-current-month"><span class="date-number">26</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">27</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">28</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">29</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">30</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                        <td><span class="date-number">2</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Sanayi & Tekn.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">3</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">4</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">5</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">6</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">7</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">8</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">9</span><span class="event-desc event-karadelik">Karadelik Hf.<br>(Medya & İlt.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">10</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">11</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">12</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">13</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">14</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">15</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">16</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">17</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">18</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">19</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">20</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">21</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">22</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">23</span><span class="event-desc event-kulucka">Kuluçka Hf.<br>(Medya & İlt.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">24</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">25</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">28</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">29</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                        <td><span class="date-number">30</span><span class="event-desc event-supernova">Süpernova Hf.<br>(Medya & İlt.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">31</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">1</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">2</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">3</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">4</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">5</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td class="not-current-month"><span class="date-number">6</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAZİRAN 2027 -->
+                <div class="tab-pane fade" id="haziran27" role="tabpanel">
+                    <div class="month-card">
+                        <h3 class="month-header">Haziran 2027</h3>
+                        <div class="calendar-table-wrapper">
+                            <table class="calendar-grid">
+                                <thead>
+                                    <tr><th>Pzt</th><th>Sal</th><th>Çarş</th><th>Perş</th><th>Cum</th><th>Cts</th><th>Pzr</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="not-current-month"><span class="date-number">31</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td><span class="date-number">1</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td><span class="date-number">2</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td><span class="date-number">3</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td><span class="date-number">4</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td><span class="date-number">5</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                        <td><span class="date-number">6</span><span class="event-desc event-egitim">Eğitim İçeriği<br>(Psik. & Sosy.)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">7</span></td>
+                                        <td><span class="date-number">8</span></td>
+                                        <td><span class="date-number">9</span></td>
+                                        <td><span class="date-number">10</span></td>
+                                        <td><span class="date-number">11</span></td>
+                                        <td><span class="date-number">12</span></td>
+                                        <td><span class="date-number">13</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">14</span></td>
+                                        <td><span class="date-number">15</span></td>
+                                        <td><span class="date-number">16</span></td>
+                                        <td><span class="date-number">17</span></td>
+                                        <td><span class="date-number">18</span></td>
+                                        <td><span class="date-number">19</span></td>
+                                        <td><span class="date-number">20</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">21</span></td>
+                                        <td><span class="date-number">22</span></td>
+                                        <td><span class="date-number">23</span></td>
+                                        <td><span class="date-number">24</span></td>
+                                        <td><span class="date-number">25</span></td>
+                                        <td><span class="date-number">26</span><span class="event-desc event-ozel">Kapanış<br>Programı</span></td>
+                                        <td><span class="date-number">27</span><span class="event-desc event-ozel">Kapanış<br>Programı</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-number">28</span></td>
+                                        <td><span class="date-number">29</span></td>
+                                        <td><span class="date-number">30</span></td>
                                         <td class="not-current-month"><span class="date-number">1</span></td>
                                         <td class="not-current-month"><span class="date-number">2</span></td>
                                         <td class="not-current-month"><span class="date-number">3</span></td>
+                                        <td class="not-current-month"><span class="date-number">4</span></td>
                                     </tr>
                                 </tbody>
                             </table>
