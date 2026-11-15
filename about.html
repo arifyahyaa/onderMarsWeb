@@ -4,16 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="canonical" href="http://mars.onder.org.tr/about.html">
-  <link rel="prev" href="index.html">
-  <link rel="next" href="2026-2027/tarih.html">
-  <link rel="icon" href="assets/tarayici-logo-01.png">
+  <link rel="canonical" href="http://mars.onder.org.tr/2026-2027/tarih.html">
+  <link rel="prev" href="../about.html">
+  <link rel="icon" href="../assets/tarayici-logo-01.png">
   <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
 
-  <title>Eğitim Hakkında - MARS Projesi | Eğitim İçerikleri</title>
+  <title>Tarih Ayı - MARS Projesi | Eğitim İçerikleri</title>
 
-  <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
-  <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+  <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+  <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
@@ -24,11 +23,10 @@
     }
   </style>
 
-  <link rel="stylesheet" href="stylesheets/extra.css">
+  <link rel="stylesheet" href="../stylesheets/extra.css">
 
   <!-- MARS ANA SİTE UYUMLU ÖZEL STİLLER -->
   <style>
-    /* Ana Site Renklerini MkDocs'a Entegre Etme */
     [data-md-color-scheme="default"] {
       --md-primary-fg-color: #d84315 !important;
       --md-primary-bg-color: #ffffff !important;
@@ -36,29 +34,43 @@
       --md-default-bg-color: #f9f9f9 !important; 
     }
 
+    /* Sol menü aktif sekme rengi */
     .md-nav__link--active {
       color: #d84315 !important;
       font-weight: 700 !important;
     }
 
-    .md-tabs {
-      background-color: #bf360c !important; 
-    }
+    /* Üst menü sekmeleri */
+    .md-tabs { background-color: #bf360c !important; }
     .md-tabs__link--active {
       color: #ffffff !important;
       border-bottom: 2px solid #ffffff;
     }
 
-    .md-typeset h1, .md-typeset h2 {
-      color: #212121 !important;
-    }
+    /* Başlık Rengi */
+    .md-typeset h1, .md-typeset h2 { color: #212121 !important; }
+    
     .md-typeset h1 {
       border-bottom: 2px solid #d84315;
       padding-bottom: 10px;
       margin-bottom: 30px;
+      font-size: 1.4rem !important; 
     }
 
-    /* Eğitim Modeli Kartları */
+    /* KUTU İÇİ METİNLERİNİ KÜÇÜLTME (Senin istediğin ayar) */
+    .egitim-asama-kart p {
+      font-size: 0.75rem !important; /* Paragraflar küçüldü */
+      line-height: 1.6 !important;
+    }
+
+    .egitim-asama-kart h2 {
+      margin-top: 0 !important;
+      font-size: 1.1rem !important; /* Kutu başlıkları küçüldü */
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 12px !important;
+    }
+
     .egitim-asama-kart {
       background: #ffffff;
       border: 1px solid #eeeeee;
@@ -69,36 +81,62 @@
       border-left: 5px solid #d84315; 
     }
 
-    .egitim-asama-kart h2 {
-      margin-top: 0 !important;
-      font-size: 1.4rem !important;
-      border-bottom: none !important;
-      padding-bottom: 0 !important;
-      margin-bottom: 12px !important;
-    }
-
-    .egitim-asama-kart p {
-      color: #555555;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    /* İNCELTİLMİŞ HEDEF KUTULARI (Balonlar) */
+    /* İçerikteki Balon / Hedef Kutuları */
     .hedef-kutu {
       background-color: #fff3e0; 
-      padding: 8px 12px; /* Eski haline göre daraltıldı */
+      padding: 12px 15px; 
       border-radius: 4px;
-      margin-top: 10px; /* Boşluk azaltıldı */
+      margin-top: 15px; 
       border-left: 3px solid #ff9800;
-      font-size: 0.85rem; /* Font küçültüldü */
-      line-height: 1.4;
+      font-size: 0.7rem !important; /* Kutu içindeki yazılar küçüldü */
+      line-height: 1.5;
       color: #424242;
     }
-    .hedef-kutu strong {
-      color: #d84315;
+    
+    .hedef-kutu ul li {
+      font-size: 0.7rem !important; /* Liste elemanları küçüldü */
+      line-height: 1.5;
     }
 
-    /* FOOTER VE SOSYAL MEDYA İKONLARI */
+    .hedef-kutu strong { color: #d84315; }
+    .hedef-kutu ul { margin-top: 5px; margin-bottom: 0; padding-left: 20px; }
+
+    /* Video ve Buton Stilleri */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .btn-mars {
+      background-color: #d84315;
+      color: #ffffff !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-right: 10px;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-mars:hover { 
+      background-color: #bf360c; 
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
     .md-footer-meta {
       background-color: #ffffff;
       border-top: 1px solid #e0e0e0;
@@ -109,69 +147,24 @@
       align-items: center;
       padding: 15px 0;
     }
-    .md-social {
-      display: flex;
-      gap: 15px;
-    }
+    .md-social { display: flex; gap: 15px; }
     .md-social__link {
       color: #757575 !important;
       transition: color 0.2s, transform 0.2s;
     }
     .md-social__link:hover {
-      color: #d84315 !important; /* Üstüne gelince turuncu oluyor */
+      color: #d84315 !important; 
       transform: translateY(-2px);
     }
 
-/* 1. SOL MENÜYÜ BÜYÜTME VE BELİRGİNLEŞTİRME */
-    .md-nav__link, .md-nav__title {
-      font-size: 0.95rem !important; /* Çok küçük olan fontu okunabilir boyuta çektik */
-      line-height: 1.6 !important;
-    }
-
-    /* 2. SAĞ KART İÇERİKLERİNİ ZARİFLEŞTİRME */
-    .md-typeset p, .egitim-asama-kart p {
-      font-size: 0.95rem !important; /* Devasa paragrafları ideal boyuta küçülttük */
-      line-height: 1.6 !important;
-    }
-
-    .egitim-asama-kart h2 {
-      font-size: 1.25rem !important; /* Başlık boyutunu hafifçe kıstık */
-    }
-
-    .md-typeset h1 {
-      font-size: 1.7rem !important; /* Ana başlığı da orantıladık */
-    }
-
     /* Koyu Tema Ayarları */
-    [data-md-color-scheme="slate"] .egitim-asama-kart {
-      background: #212121;
-      border-color: #424242;
-    }
-    [data-md-color-scheme="slate"] .egitim-asama-kart p {
-      color: #cccccc;
-    }
-    [data-md-color-scheme="slate"] .hedef-kutu {
-      background-color: #3e2723;
-      border-color: #ff5722;
-      color: #eeeeee;
-    }
-    [data-md-color-scheme="slate"] .hedef-kutu strong {
-      color: #ffccbc;
-    }
-    [data-md-color-scheme="slate"] .md-footer-meta {
-      background-color: #1e1e1e;
-      border-top-color: #333333;
-    }
+    [data-md-color-scheme="slate"] .egitim-asama-kart { background: #212121; border-color: #424242; }
+    [data-md-color-scheme="slate"] .hedef-kutu { background-color: #3e2723; border-color: #ff5722; color: #eeeeee; }
+    [data-md-color-scheme="slate"] .hedef-kutu strong { color: #ffccbc; }
+    [data-md-color-scheme="slate"] .md-footer-meta { background-color: #1e1e1e; border-top-color: #333333; }
   </style>
 
-  <script>__md_scope = new URL(".", location), __md_hash = e => [...e].reduce(((e, _) => (e << 5) - e + _.charCodeAt(0)), 0), __md_get = (e, _ = localStorage, t = __md_scope) => JSON.parse(_.getItem(t.pathname + "." + e)), __md_set = (e, _, t = localStorage, a = __md_scope) => { try { t.setItem(a.pathname + "." + e, JSON.stringify(_)) } catch (e) { } }</script>
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Eğitim Hakkında - MARS Projesi | Eğitim İçerikleri">
-  <meta property="og:image" content="http://mars.onder.org.tr/assets/images/social/about.png">
-  <meta property="og:url" content="http://mars.onder.org.tr/about.html">
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet">
-  <script src="assets/javascripts/glightbox.min.js"></script>
+  <script>__md_scope = new URL("..", location), __md_hash = e => [...e].reduce(((e, _) => (e << 5) - e + _.charCodeAt(0)), 0), __md_get = (e, _ = localStorage, t = __md_scope) => JSON.parse(_.getItem(t.pathname + "." + e)), __md_set = (e, _, t = localStorage, a = __md_scope) => { try { t.setItem(a.pathname + "." + e, JSON.stringify(_)) } catch (e) { } }</script>
 </head>
 
 <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
@@ -180,13 +173,13 @@
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
   <label class="md-overlay" for="__drawer"></label>
   <div data-md-component="skip">
-    <a href="#mars-egitim-modeli" class="md-skip">Ana içeriğe geç</a>
+    <a href="#mars-tarih" class="md-skip">Ana içeriğe geç</a>
   </div>
 
   <header class="md-header" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="Başlık">
-      <a href="index.html" title="MARS Projesi | Eğitim İçerikleri" class="md-header__button md-logo" aria-label="MARS Projesi | Eğitim İçerikleri" data-md-component="logo">
-        <img src="assets/logo-beyaz-01.png" alt="logo">
+      <a href="../index.html" title="MARS Projesi | Eğitim İçerikleri" class="md-header__button md-logo" aria-label="MARS Projesi | Eğitim İçerikleri" data-md-component="logo">
+        <img src="../assets/logo-beyaz-01.png" alt="logo">
       </a>
       <label class="md-header__button md-icon" for="__drawer">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -197,7 +190,7 @@
             <span class="md-ellipsis">MARS Projesi | Eğitim İçerikleri</span>
           </div>
           <div class="md-header__topic" data-md-component="header-topic">
-            <span class="md-ellipsis">Eğitim Hakkında</span>
+            <span class="md-ellipsis">2026-2027 Dönemi / Tarih</span>
           </div>
         </div>
       </div>
@@ -214,35 +207,6 @@
       </form>
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
 
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-        <label class="md-search__overlay" for="__search"></label>
-        <div class="md-search__inner" role="search">
-          <form class="md-search__form" name="search">
-            <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-            <label class="md-search__icon md-icon" for="__search">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>
-            </label>
-            <nav class="md-search__options" aria-label="Ara">
-              <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-              </button>
-            </nav>
-            <div class="md-search__suggest" data-md-component="search-suggest"></div>
-          </form>
-          <div class="md-search__output">
-            <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-              <div class="md-search-result" data-md-component="search-result">
-                <div class="md-search-result__meta">Arama başlatılıyor</div>
-                <ol class="md-search-result__list" role="presentation"></ol>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </nav>
   </header>
 
@@ -251,11 +215,11 @@
     <nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
       <div class="md-grid">
         <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Anasayfa</a></li>
-          <li class="md-tabs__item md-tabs__item--active"><a href="about.html" class="md-tabs__link">Eğitim Hakkında</a></li>
-          <li class="md-tabs__item"><a href="2026-2027/tarih.html" class="md-tabs__link">2026-2027 Dönemi</a></li>
-          <li class="md-tabs__item"><a href="2025-2026/econ-ticaret.html" class="md-tabs__link">2025-2026 Dönemi</a></li>
-          <li class="md-tabs__item"><a href="2024-2025/int-hukuk.html" class="md-tabs__link">2024-2025 Dönemi</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Anasayfa</a></li>
+          <li class="md-tabs__item"><a href="../about.html" class="md-tabs__link">Eğitim Hakkında</a></li>
+          <li class="md-tabs__item md-tabs__item--active"><a href="tarih.html" class="md-tabs__link">2026-2027 Dönemi</a></li>
+          <li class="md-tabs__item"><a href="../2025-2026/econ-ticaret.html" class="md-tabs__link">2025-2026 Dönemi</a></li>
+          <li class="md-tabs__item"><a href="../2024-2025/int-hukuk.html" class="md-tabs__link">2024-2025 Dönemi</a></li>
         </ul>
       </div>
     </nav>
@@ -268,52 +232,40 @@
             <div class="md-sidebar__inner">
               <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigasyon" data-md-level="0">
                 <label class="md-nav__title" for="__drawer">
-                  <a href="index.html" title="MARS Projesi | Eğitim İçerikleri" class="md-nav__button md-logo" aria-label="MARS Projesi | Eğitim İçerikleri" data-md-component="logo">
-                    <img src="assets/logo-beyaz-01.png" alt="logo">
+                  <a href="../index.html" title="MARS Projesi | Eğitim İçerikleri" class="md-nav__button md-logo" aria-label="MARS Projesi | Eğitim İçerikleri" data-md-component="logo">
+                    <img src="../assets/logo-beyaz-01.png" alt="logo">
                   </a>
                   MARS Projesi | Eğitim İçerikleri
                 </label>
 
                 <ul class="md-nav__list" data-md-scrollfix>
                   <li class="md-nav__item">
-                    <a href="index.html" class="md-nav__link">
+                    <a href="../index.html" class="md-nav__link">
                       <span class="md-ellipsis">Anasayfa</span>
                     </a>
                   </li>
 
-                  <li class="md-nav__item md-nav__item--active">
-                    <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-                    <label class="md-nav__link md-nav__link--active" for="__toc">
-                      <span class="md-ellipsis">Eğitim Hakkında</span>
-                      <span class="md-nav__icon md-icon"></span>
-                    </label>
-                    <a href="about.html" class="md-nav__link md-nav__link--active">
+                  <li class="md-nav__item">
+                    <a href="../about.html" class="md-nav__link">
                       <span class="md-ellipsis">Eğitim Hakkında</span>
                     </a>
-                    <nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
-                      <label class="md-nav__title" for="__toc">
-                        <span class="md-nav__icon md-icon"></span>
-                        İçindekiler
-                      </label>
-                      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-                        <li class="md-nav__item"><a href="#mars-egitim-modeli" class="md-nav__link"><span class="md-ellipsis">Eğitim Modeli</span></a></li>
-                        <li class="md-nav__item"><a href="#1-karadelik-haftalari" class="md-nav__link"><span class="md-ellipsis">1. Karadelik Haftaları</span></a></li>
-                        <li class="md-nav__item"><a href="#2-kulucka-haftalari" class="md-nav__link"><span class="md-ellipsis">2. Kuluçka Haftaları</span></a></li>
-                        <li class="md-nav__item"><a href="#3-supernova-haftalari" class="md-nav__link"><span class="md-ellipsis">3. Süpernova Haftaları</span></a></li>
-                      </ul>
-                    </nav>
                   </li>
 
-                  <li class="md-nav__item md-nav__item--nested">
-                    <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2026">
+                  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+                    <input class="md-nav__toggle md-toggle" type="checkbox" id="__nav_2026" checked="checked">
                     <label class="md-nav__link" for="__nav_2026" id="__nav_2026_label" tabindex="0">
                       <span class="md-ellipsis">2026-2027 Dönemi</span>
                       <span class="md-nav__icon md-icon"></span>
                     </label>
-                    <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2026_label" aria-expanded="false">
+                    <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2026_label" aria-expanded="true">
                       <label class="md-nav__title" for="__nav_2026"><span class="md-nav__icon md-icon"></span>2026-2027 Dönemi</label>
                       <ul class="md-nav__list" data-md-scrollfix>
-                        <li class="md-nav__item"><a href="2026-2027/tarih.html" class="md-nav__link"><span class="md-ellipsis">Tarih</span></a></li>
+                        <li class="md-nav__item md-nav__item--active">
+                          <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                          <a href="tarih.html" class="md-nav__link md-nav__link--active">
+                            <span class="md-ellipsis">Tarih</span>
+                          </a>
+                        </li>
                       </ul>
                     </nav>
                   </li>
@@ -327,9 +279,9 @@
                     <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2025_label" aria-expanded="false">
                       <label class="md-nav__title" for="__nav_2025"><span class="md-nav__icon md-icon"></span>2025-2026 Dönemi</label>
                       <ul class="md-nav__list" data-md-scrollfix>
-                        <li class="md-nav__item"><a href="2025-2026/econ-ticaret.html" class="md-nav__link"><span class="md-ellipsis">Ekonomi ve Ticaret</span></a></li>
-                        <li class="md-nav__item"><a href="2025-2026/int-hukuk.html" class="md-nav__link"><span class="md-ellipsis">Uluslararası Hukuk</span></a></li>
-                        <li class="md-nav__item"><a href="2025-2026/medya-iletisim.html" class="md-nav__link"><span class="md-ellipsis">Medya ve İletişim</span></a></li>
+                        <li class="md-nav__item"><a href="../2025-2026/econ-ticaret.html" class="md-nav__link"><span class="md-ellipsis">Ekonomi ve Ticaret</span></a></li>
+                        <li class="md-nav__item"><a href="../2025-2026/int-hukuk.html" class="md-nav__link"><span class="md-ellipsis">Uluslararası Hukuk</span></a></li>
+                        <li class="md-nav__item"><a href="../2025-2026/medya-iletisim.html" class="md-nav__link"><span class="md-ellipsis">Medya ve İletişim</span></a></li>
                       </ul>
                     </nav>
                   </li>
@@ -343,13 +295,13 @@
                     <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
                       <label class="md-nav__title" for="__nav_4"><span class="md-nav__icon md-icon"></span>2024-2025 Dönemi</label>
                       <ul class="md-nav__list" data-md-scrollfix>
-                        <li class="md-nav__item"><a href="2024-2025/int-hukuk.html" class="md-nav__link"><span class="md-ellipsis">Uluslararası Hukuk</span></a></li>
-                        <li class="md-nav__item"><a href="2024-2025/medya-iletisim.html" class="md-nav__link"><span class="md-ellipsis">Medya ve İletişim</span></a></li>
-                        <li class="md-nav__item"><a href="2024-2025/econ-ticaret.html" class="md-nav__link"><span class="md-ellipsis">Ekonomi ve Ticaret</span></a></li>
-                        <li class="md-nav__item"><a href="2024-2025/sanat-zanaat.html" class="md-nav__link"><span class="md-ellipsis">Sanat ve Zanaat</span></a></li>
-                        <li class="md-nav__item"><a href="2024-2025/edebiyat.html" class="md-nav__link"><span class="md-ellipsis">Edebiyat</span></a></li>
-                        <li class="md-nav__item"><a href="2024-2025/surdurulebilirlik.html" class="md-nav__link"><span class="md-ellipsis">Sürdürülebilirlik</span></a></li>
-                        <li class="md-nav__item"><a href="2024-2025/sanayi-teknoloji.html" class="md-nav__link"><span class="md-ellipsis">Sanayi ve Teknoloji</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/int-hukuk.html" class="md-nav__link"><span class="md-ellipsis">Uluslararası Hukuk</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/medya-iletisim.html" class="md-nav__link"><span class="md-ellipsis">Medya ve İletişim</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/econ-ticaret.html" class="md-nav__link"><span class="md-ellipsis">Ekonomi ve Ticaret</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/sanat-zanaat.html" class="md-nav__link"><span class="md-ellipsis">Sanat ve Zanaat</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/edebiyat.html" class="md-nav__link"><span class="md-ellipsis">Edebiyat</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/surdurulebilirlik.html" class="md-nav__link"><span class="md-ellipsis">Sürdürülebilirlik</span></a></li>
+                        <li class="md-nav__item"><a href="../2024-2025/sanayi-teknoloji.html" class="md-nav__link"><span class="md-ellipsis">Sanayi ve Teknoloji</span></a></li>
                       </ul>
                     </nav>
                   </li>
@@ -362,34 +314,68 @@
         <div class="md-content" data-md-component="content">
           <article class="md-content__inner md-typeset">
 
-            <h1 id="mars-egitim-modeli">MARS Eğitim Modeli</h1>
-            <p>MARS Projesi; düşünmek ve üretmek üzerine kurulu, disiplinler arası bir keşif yolculuğudur. Eğitim modelimiz, öğrencilerin sadece teorik bilgi edinmelerini değil; bu bilgiyi sosyal girişimcilik becerileriyle harmanlayarak toplumsal faydaya dönüştürmelerini hedefler.</p>
-            <p>Sürecimiz birbirini tamamlayan üç temel eğitim halkasından oluşur:</p>
+            <h1 id="mars-tarih">Tarih Ayı: Yıkım, İnşa ve Kültürel Bellek</h1>
+            <p><strong>Tema:</strong> Epik Havzadan Anadolu İrfanına: Dede Korkut Anlatılarında Yıkım, İnşa ve Kültürel Belleğin Modern Tezahürleri</p>
+            <p>Dede Korkut Masalları üzerinden Türklerin, Türkistan'dan Anadolu'ya göçü ve yaşadığı yıkım üzerine Anadolu'da başlayan yeniden inşa faaliyeti, kimlik taşıması ve bilinç aktarımı işlenecek; günümüz modern dünyası üzerinden bu bilinç aktarımı değerlendirilecektir.</p>
 
             <div class="egitim-asama-kart">
-                <h2 id="1-karadelik-haftalari">1. Karadelik Haftaları</h2>
-                <p>Karadelik Haftaları, <strong>7 farklı ilde</strong> yer alan öğrencilerin proje arkadaşlarıyla <strong>eş zamanlı</strong> olarak belirlenen bir konu üzerinde yoğunlaştıkları entelektüel bir laboratuvardır.</p>
-                <p>Bu haftalarda öğrenciler, seçilen temayı (Medya, Hukuk, Ekonomi vb.) derinlemesine araştırır ve "Lider El Raporu" rehberliğinde kritik sorular üzerinden tartışırlar. Farklı fikirlerin bir araya geldiği bu ortam, öğrencilerin sadece analitik düşünme değil, aynı zamanda <strong>iş birliği ve iletişim becerilerini</strong> de geliştirmelerine olanak sağlar.</p>
+                <h2 id="1-karadelik-haftalari">1. Karadelik Haftaları (Okuma ve Analiz)</h2>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YB9j3S8h6u0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+
+                <p>Şamanik köklerden İslami senteze evrilen kültürel belleğimizin ve Anadolu İrfanı'nın Dede Korkut hikâyelerindeki izdüşümleri okunacak ve analiz edilecektir.</p>
+
                 <div class="hedef-kutu">
-                    <strong>Hedef:</strong> Analitik düşünme, iş birliği, çok yönlü bakış açısı ve ortak çalışma kültürü.
+                    <strong>Münazara ve Tartışma Köşesi:</strong>
+                    <ul>
+                        <li>Dede Korkut figürü neyi temsil etmektedir, gerçek dünyada karşılığı var mıdır?</li>
+                        <li>Dede Korkut destanı ile bugün arasında vak'a ve karakter olarak uyuşan noktalar nelerdir?</li>
+                        <li>Dede Korkut masallarında Oğuzların zor durumlardan çıkmak için başvurdukları yollar nelerdir?</li>
+                        <li>"Uyku Oğuz'un düşmanıdır" sözü neyi anlatmaktadır? Uykudan kasıt nedir?</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <a href="https://drive.google.com/file/d/1VdpRENI1_YsqD8yheyBbFIVe4TrPAJrH/view" class="btn-mars" target="_blank">1. Araştırma ve Analiz Dosyası</a>
+                    <a href="https://drive.google.com/file/d/1N9WrMvcYdfsa4OkZN2V0Q503-yumglDR/view" class="btn-mars" target="_blank">2. Makale: Yıkım ve İnşa Teması</a>
                 </div>
             </div>
 
             <div class="egitim-asama-kart">
-                <h2 id="2-kulucka-haftalari">2. Kuluçka Haftaları</h2>
-                <p>Karadelik haftasında teorik altyapısı kurulan konuların, alanında uzman akademisyen ve eğitmenlerle buluştuğu vizyon aşamasıdır. Çevrim içi gerçekleşen bu buluşmalarda öğrenciler; sadece teknik bilgi değil, aynı zamanda <strong>sosyal girişkenlik, zaman yönetimi, kariyer planlama ve özgüven geliştirme</strong> gibi alanlarda yetkinlik kazanırlar.</p>
-                <p>Bu oturumlar, öğrencilerin ilgi duydukları alanlarda <strong>somut adımlar</strong> atmalarını, geleceğe dair gerçekçi planlar yapmalarını ve küresel meselelere yenilikçi çözümler üretmelerini destekler.</p>
+                <h2 id="2-kulucka-haftalari">2. Kuluçka Haftaları (Uzman Buluşması)</h2>
+                <p><strong>Konu:</strong> Moğol İstilası, Türkistan, Yıkım ve İnşa</p>
+                <p><strong>Konuşmacı:</strong> Yakında Duyurulacak</p>
+
                 <div class="hedef-kutu">
-                    <strong>Hedef:</strong> Yenilikçi düşünme, sosyal sorumluluk bilinci, profesyonel ağ kurma ve kariyer vizyonu.
+                    <strong>Etkinlik Odak Soruları:</strong>
+                    <ul>
+                        <li>Moğollar gerçekten tam olarak bir imha ordusu muydu yoksa farklı okunması gereken tarafları var mı?</li>
+                        <li>Moğol istilasından günümüzde hâlâ kulağımıza küpe olabilecek dersler nelerdir?</li>
+                        <li>Türkistan'dan bu yana geçirdiğimiz değişimlerin en büyüğünü bu dönemde geçiriyor olabilir miyiz?</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="egitim-asama-kart">
-                <h2 id="3-supernova-haftalari">3. Süpernova Haftaları</h2>
-                <p>Süpernova, MARS eğitim modelinin sahaya inen yüzüdür. Bu haftalar, öğrencilerin <strong>keyifli vakit geçirerek</strong> yeni deneyimler kazanacakları, sanatsal, sportif ve kültürel faaliyetlerle (doğa yürüyüşleri, el becerileri vb.) beslenecekleri bir süreçtir.</p>
-                <p>Süpernova sadece bir gezi değil, aynı zamanda bir <strong>üretim sürecidir</strong>. Öğrenciler; bir medya ajansında işleyişi gözlemlerken veya bir fanzin atölyesinde kendi dergisini tasarlarken hem dinlenir hem de yaparak öğrenmenin tadını çıkarır.</p>
+                <h2 id="3-supernova-haftalari">3. Süpernova Haftaları (Kültürel Geziler)</h2>
+                <p>Bu haftalarda öğrenciler, kendi illerindeki tarihi izleri takip ederek Selçuklu'dan Osmanlı'ya miras kalan yıkım ve yeniden inşa süreçlerini yerinde gözlemleyecektir. Her il kendi ulaşım imkânları dâhilinde belirlenen rotalarda kültürel keşif yapacaktır.</p>
+                
+                <p><strong>Örnek Keşif Rotaları:</strong></p>
+                <ul style="color: #555; font-size: 0.85rem;">
+                    <li><strong>İstanbul:</strong> Boğaz Kıyısında Selçuklu ve Erken İskân İzi</li>
+                    <li><strong>Samsun:</strong> Karadeniz'de Çivisiz Ahşap ve Beylikler İntikali</li>
+                    <li><strong>Sivas:</strong> Taşın, Şifanın ve Hikmetin İntikali</li>
+                    <li><strong>Antalya:</strong> Türklerin Akdeniz'e Açılan Kapısı</li>
+                    <li><strong>Konya:</strong> Selçuklu Darü's-Saltanası ve Hikmetin Başkenti</li>
+                    <li><strong>Bursa & İznik:</strong> Çadırdan Cihan Devletine İntikal</li>
+                    <li><strong>Gaziantep:</strong> Ayıntab'ın Suğûr Havzası ve Taş Mimarisi</li>
+                </ul>
+
                 <div class="hedef-kutu">
-                    <strong>Hedef:</strong> Uygulamalı öğrenme, üretim becerisi, saha deneyimi ve kültürel gelişim.
+                    <strong>Öğrenci Görev Çıktısı (Makale):</strong><br>
+                    Öğrencilerden, süpernova gezisi sonunda gezdikleri yerleri işledikleri konu (günümüz istilaları ve yıkımı) ile bağdaştırarak bir gezi/makale yazısı kaleme almaları beklenmektedir.
                 </div>
             </div>
 
@@ -398,7 +384,6 @@
       </div>
     </main>
 
-    <!-- GÜNCELLENMİŞ FOOTER BÖLÜMÜ -->
     <footer class="md-footer">
       <div class="md-footer-meta md-typeset">
         <div class="md-footer-meta__inner md-grid">
@@ -409,7 +394,6 @@
             Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a>
           </div>
           
-          <!-- Sosyal Medya İkonları Sağda Konumlandırıldı -->
           <div class="md-social">
             <a href="https://www.facebook.com/onderiho" target="_blank" rel="noopener" title="Facebook" class="md-social__link">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -438,9 +422,9 @@
 
   </div>
 
-  <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["header.autohide", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n"}, "version": null}</script>
-  <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
-  <script src="js/open_in_new_tab.js"></script>
+  <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["header.autohide", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n"}, "version": null}</script>
+  <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+  <script src="../js/open_in_new_tab.js"></script>
   <script id="init-glightbox">const lightbox = GLightbox({ "touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide" }); document$.subscribe(() => { lightbox.reload(); });</script>
 </body>
 </html>
